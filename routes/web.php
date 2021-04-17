@@ -21,4 +21,4 @@ Route::get('/imoveis', 'App\Http\Controllers\PropertyController@index');
 
 Route::get('/imoveis/novo', 'App\Http\Controllers\PropertyController@create');
 Route::post('/imoveis/store', 'App\Http\Controllers\PropertyController@store');
-Route::get('/imoveis/ver/{id}', 'App\Http\Controllers\PropertyController@show');
+Route::get('/imoveis/{name}', 'App\Http\Controllers\PropertyController@show');

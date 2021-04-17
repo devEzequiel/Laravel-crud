@@ -3,7 +3,7 @@
 
 
 @if(!empty($properties))
-    <table>;
+    <table>
          <tr>
             <th>Titulo </th>
             <th>Valor de venda </th>
@@ -16,9 +16,9 @@
                 <td>R$ {{number_format($property->sale_price, 2, ',', '.')}}</td>
                 <td>R$ {{number_format($property->rental_price, 2, ',', '.')}}</td>
                 <td>
-                    <a href="{{url('imoveis/ver/'.$property->id)}}">Detalhes |</a>
-                    <a href="{{url('imoveis/editar/'.$property->id)}}"> Editar |</a>
-                    <a href="{{url('imoveis/deletar/'.$property->id)}}"> Deletar</a>
+                    <a href="{{url('imoveis/'.$property->name)}}">Detalhes |</a>
+                    <a href="{{url('imoveis/editar/'.$property->name)}}"> Editar |</a>
+                    <a href="{{url('imoveis/deletar/'.$property->name)}}"> Deletar</a>
                 </td>
          </tr>
     @endforeach
