@@ -1,7 +1,7 @@
 <h1>Formulario de Cadastro :: Imóveis</h1>
 
 <form action="{{url("/imoveis/store")}}" method="post">
-    <?php echo csrf_field(); ?>
+    {{csrf_field()}}
 
     <label for="title">Titulo do Imóvel</label>
     <input id="title" name="title" type="text">
@@ -17,6 +17,6 @@
     <label for="sale">Valor de Venda</label>
     <input id="sale" name="sale" type="text">
     <br /><br />
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Cadastrar Imóvel">
 
 </form>

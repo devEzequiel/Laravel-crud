@@ -18,7 +18,7 @@
                 <td>
                     <a href="{{url('imoveis/'.$property->name)}}">Detalhes |</a>
                     <a href="{{url('imoveis/editar/'.$property->name)}}"> Editar |</a>
-                    <a href="{{url('imoveis/deletar/'.$property->name)}}"> Deletar</a>
+                    <a href="{{url('imoveis/remover/'.$property->name)}}"> Deletar</a>
                 </td>
          </tr>
     @endforeach
