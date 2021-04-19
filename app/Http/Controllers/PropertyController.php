@@ -18,12 +18,10 @@ class PropertyController extends Controller
 
     public function show($name)
     {
-//        $property = DB::select('SELECT * FROM properties WHERE name = ? ', [$name]);
+        //$property = DB::select('SELECT * FROM properties WHERE name = ? ', [$name]);
         $property = Property::where('name', $name)->get();
 
-        if (!empty($property)) {
-            return view("property/show")->with('property', $property);
-        } else {
+        if (!empty($property)) return view("property/show")->with('property', $property); else {
             return redirect()->action('App\Http\Controllers\PropertyController@index');
         }
     }
@@ -52,7 +50,8 @@ class PropertyController extends Controller
 
     public function edit(string $name)
     {
-        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+//        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+        $property = Property::where('name', $name)->get();
         return view("property/edit")->with('property', $property);
     }
 
@@ -76,8 +75,8 @@ class PropertyController extends Controller
 
     public function remove(string $name)
     {
-        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
-
+//        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+        $property = Property::where('name', $name)->get();
         if (!empty($property)) {
             DB::delete("DELETE FROM properties WHERE name = ?", [$name]);
         }
@@ -88,7 +87,8 @@ class PropertyController extends Controller
     {
         $propertySlug = Str::slug($title);
 
-        $properties = DB::select('SELECT * FROM properties');
+//        $properties = DB::select('SELECT * FROM properties');
+        $properties = Property::all();
         $t = 0;
         foreach ($properties as $property) {
             if ($propertySlug === Str::slug($property->title)) {
