@@ -99,7 +99,7 @@ class PropertyController extends Controller
         if ($t > 0) {
             $propertySlug = $propertySlug.'-'.$t;
         }
-
+        
         return $propertySlug;
     }
 }
