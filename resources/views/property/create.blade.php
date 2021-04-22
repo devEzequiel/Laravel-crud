@@ -1,22 +1,33 @@
-<h1>Formulario de Cadastro :: Imóveis</h1>
+@extends('property.master')
 
-<form action="{{url("/imoveis/store")}}" method="post">
-    {{csrf_field()}}
+@section('content')
+    <div class="container my-5">
+        <h1>Formulario de Cadastro :: Imóveis</h1>
 
-    <label for="title">Titulo do Imóvel</label>
-    <input id="title" name="title" type="text">
-    <br /><br />
-    <label for="descrip">Descrição</label>
-    <textarea id="descrip" name="descrip" type="text"></textarea>
-    <br /><br />
+        <form action="{{url("/imoveis/store")}}" method="post">
+            {{csrf_field()}}
 
-    <label for="rental">Valor de Locação</label>
-    <input id="rental" name="rental" type="text">
-    <br /><br />
+            <div class="form-group">
+                <label for="title">Titulo do Imóvel</label>
+                <input id="title" name="title" type="text" class="form-control">
+            </div>
 
-    <label for="sale">Valor de Venda</label>
-    <input id="sale" name="sale" type="text">
-    <br /><br />
-    <input type="submit" value="Cadastrar Imóvel">
+            <div class="form-group">
+                <label for="descrip">Descrição</label>
+                <textarea id="descrip" name="descrip" type="text" class="form-control"></textarea>
+            </div>
 
-</form>
+            <div class="form-group">
+                <label for="rental">Valor de Locação</label>
+                <input id="rental" name="rental" type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="sale">Valor de Venda</label>
+                <input id="sale" name="sale" type="text" class="form-control">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Cadastrar Imóvel">
+
+        </form>
+    </div>
+@endsection

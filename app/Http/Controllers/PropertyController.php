@@ -13,7 +13,7 @@ class PropertyController extends Controller
     {
         //$properties = DB::select("SELECT * FROM properties");
         $properties = Property::all();
-        return view("property.index")->with('properties', $properties);
+        return view('property.index')->with('properties', $properties);
     }
 
     public function show($name)
@@ -46,6 +46,7 @@ class PropertyController extends Controller
                     (?, ?, ?, ?, ?)", $property);
 
         return redirect()->action('App\Http\Controllers\PropertyController@index');
+
     }
 
     public function edit(string $name)

@@ -1,12 +1,17 @@
+@extends('property.master')
 
+@section('content')
+    <div class="container my-5">
+        @if(!empty($property))
+            @foreach($property as $p)
 
-@if(!empty($property))
-    @foreach($property as $p)
-
-        <h1>Título do imóvel: {{$p->title}}</h1>
-        <p>Descrição do Imóvel: {{$p->description}}</p>
-        <p>Aluguel do Imóvel: R${{number_format($p->rental_price, 2, ',', '.')}}</p>
-        <p>Valor da venda do imovel: R${{number_format($p->sale_price, 2, ',', '.')}}</p>
-
-    @endforeach
-@endif
+                <h1><b>Título do imóvel: </b> {{$p->title}}</h1>
+                <div class=" my-5">
+                    <p style="font-size: large;"><b>Descrição do Imóvel: </b> {{$p->description}}</p>
+                    <p style="font-size: large;"><b>Aluguel do Imóvel: </b> R${{number_format($p->rental_price, 2, ',', '.')}}</p>
+                    <p style="font-size: large;"><b>Valor da venda do imovel: </b> R${{number_format($p->sale_price, 2, ',', '.')}}</p>
+                </div>
+            @endforeach
+        @endif
+    </div>
+@endsection
