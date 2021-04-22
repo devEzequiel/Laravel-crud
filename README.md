@@ -1,1 +1,1 @@
-**This website is just simple crud using laravel**
+**This website is just simple crud using the PHP framework Laravel**
